@@ -1,0 +1,32 @@
+"experiment":
+  # TRAINING
+  "epochs" : 150
+  "learning_rate" : 0.004
+  "beta1" : 0.9
+  "beta2" : 0.999
+  "eps" : 1.e-8
+  "weight_decay" : 0.000005
+  # SCHEDULER
+  "scheduler": "multistep"
+  # NETWORK PARAMS
+  "3D_net" : PVRCNN
+  "head" : UOTHead
+  "model_norm": "batch"
+  "num_points" : 4096
+  "feature_size" : 640
+  "cluster_size" : 64
+  "shared_embeddings": True
+  "feature_output_dim_3D" : 256
+  "point_cloud_augmentation": True
+  "point_cloud_jitter": False
+  # LOSS
+  "margin": 0.5
+  "loss_type": "triplet_random"
+  "norm_embeddings": True
+  "loop_file": "loop_GT_4m"
+  "weight_metric_learning": 1
+  "weight_rot": 1
+  "sinkhorn_iter": 5
+  "sinkhorn_aux_loss": True
+  "sinkhorn_type": "unbalanced"
+  "hard_mining": False
