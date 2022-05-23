@@ -130,6 +130,7 @@ def main_process(gpu, weights_path, args):
 
     exp_cfg['loop_file'] = 'loop_GT_4m'
     exp_cfg['head'] = 'UOTHead'
+    exp_cfg['sinkhorn_type'] = 'unbalanced'
 
     current_date = datetime.now()
 
