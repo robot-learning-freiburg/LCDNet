@@ -89,6 +89,10 @@ To evaluate the loop closure performance of the trained model on the KITTI and K
 
 To evaluate LCDNet (fast), remove the ```--ransac``` argument.
 
+## Pretrained Model
+
+A model pretrained on the KITTI-360 dataset can be found [here](https://drive.google.com/file/d/176dQn6QhFoolu3bcGvyGuBxaCQY42kNn/view?usp=sharing)
+
 ## Paper
 
 "LCDNet: Deep Loop Closure Detection and Point Cloud Registration for LiDAR SLAM"
