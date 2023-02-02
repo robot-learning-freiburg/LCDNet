@@ -17,6 +17,10 @@ Tested in the following environments:
 * Ubuntu 18.04/20.04
 * cuda 10.2/11.1/11.3
 * pytorch 1.8/1.9/1.10
+* Open3D 0.12.0
+
+#### Note
+We noticed that the RANSAC implementation in Open3D version 0.15.x achieves bad results. We tested our code with Open3D versions between 0.12.0 and 0.14.2, please use one of these versions, as results might be very different otherwise.
 
 ## Preprocessing
 
