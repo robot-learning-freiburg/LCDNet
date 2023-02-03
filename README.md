@@ -9,7 +9,7 @@ Official PyTorch implementation of LCDNet.
 1. Install [PyTorch](https://pytorch.org/) (make sure to select the correct cuda version)
 2. Install the requirements
 ```pip install -r requirements.txt```
-3. Install [spconv] <= 2.1.25 (https://github.com/traveller59/spconv) (make sure to select the correct cuda version)
+3. Install [spconv](https://github.com/traveller59/spconv) <= 2.1.25 (make sure to select the correct cuda version, for example ```pip install spconv-cu113==2.1.25``` for cuda 11.3)
 4. Install [OpenPCDet](https://github.com/open-mmlab/OpenPCDet)
 5. Install [faiss-cpu](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) - NOTE: avoid installing faiss via pip, use the conda version, or build it from source alternatively.
 
