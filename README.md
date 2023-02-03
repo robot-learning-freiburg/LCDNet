@@ -9,7 +9,7 @@ Official PyTorch implementation of LCDNet.
 1. Install [PyTorch](https://pytorch.org/) (make sure to select the correct cuda version)
 2. Install the requirements
 ```pip install -r requirements.txt```
-3. Install [spconv](https://github.com/traveller59/spconv) (make sure to select the correct cuda version)
+3. Install [spconv] <= 2.1.25 (https://github.com/traveller59/spconv) (make sure to select the correct cuda version)
 4. Install [OpenPCDet](https://github.com/open-mmlab/OpenPCDet)
 5. Install [faiss-cpu](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) - NOTE: avoid installing faiss via pip, use the conda version, or build it from source alternatively.
 
@@ -21,6 +21,8 @@ Tested in the following environments:
 
 #### Note
 We noticed that the RANSAC implementation in Open3D version 0.15.x achieves bad results. We tested our code with Open3D versions between 0.12.0 and 0.14.2, please use one of these versions, as results might be very different otherwise.
+
+We also noticed that spconv version 2.2 or higher is not compatible with the pretrained weights provided with this repository. Spconv version 2.1.25 or lower is required to properly load the pretrained model.
 
 ## Preprocessing
 
