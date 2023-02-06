@@ -14,7 +14,7 @@ Official PyTorch implementation of LCDNet.
 5. Install [faiss-cpu](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) - NOTE: avoid installing faiss via pip, use the conda version, or build it from source alternatively.
 
 Tested in the following environments:
-* Ubuntu 18.04/20.04
+* Ubuntu 18.04/20.04/22.04
 * cuda 10.2/11.1/11.3
 * pytorch 1.8/1.9/1.10
 * Open3D 0.12.0
