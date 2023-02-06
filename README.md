@@ -20,7 +20,7 @@ Tested in the following environments:
 * Open3D 0.12.0
 
 #### Note
-We noticed that the RANSAC implementation in Open3D version 0.15.x achieves bad results. We tested our code with Open3D versions between 0.12.0 and 0.14.2, please use one of these versions, as results might be very different otherwise.
+We noticed that the RANSAC implementation in Open3D version >=0.15 achieves bad results. We tested our code with Open3D versions between 0.12.0 and 0.14.2, please use one of these versions, as results might be very different otherwise.
 
 We also noticed that spconv version 2.2 or higher is not compatible with the pretrained weights provided with this repository. Spconv version 2.1.25 or lower is required to properly load the pretrained model.
 
