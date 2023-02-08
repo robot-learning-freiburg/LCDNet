@@ -35,7 +35,7 @@ We also noticed that spconv version 2.2 or higher is not compatible with the pre
 3. Build the docker image ```docker build --tag lcdnet -f Dockerfile .```
 4. Run the docker container ```docker run --gpus all -it --rm -v KITTI_ROOT:/data/KITTI lcdnet```
 5. From inside the container, activate the anaconda environment ```conda activate lcdnet``` and change directory to the LCDNet folder ```cd LCDNet```
-7. Run the training or evaluation scripts (see [Training](#training) and [Evaluation](#evaluation) sections)
+7. Run the training or evaluation scripts (see [Training](#training) and [Evaluation](#evaluation) sections). The weights of the pretrained model are copied inside the container under ```/pretreined_models/LCDNet-kitti360.tar```.
 
 ## Preprocessing
 
