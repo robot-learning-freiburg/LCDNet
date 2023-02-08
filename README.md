@@ -6,6 +6,10 @@ Official PyTorch implementation of LCDNet.
 
 ## Installation
 
+You can install LCDNet locally on your machine, or use the provided Dockerfile to run it in a container. The `environment_lcdnet.yml` file is meant to be used with docker, as it contains version of packages that are specific to a CUDA version. We don't recommend using it for local installation.
+
+### Local Installation
+
 1. Install [PyTorch](https://pytorch.org/) (make sure to select the correct cuda version)
 2. Install the requirements
 ```pip install -r requirements.txt```
@@ -23,6 +27,15 @@ Tested in the following environments:
 We noticed that the RANSAC implementation in Open3D version >=0.15 achieves bad results. We tested our code with Open3D versions between 0.12.0 and 0.14.2, please use one of these versions, as results might be very different otherwise.
 
 We also noticed that spconv version 2.2 or higher is not compatible with the pretrained weights provided with this repository. Spconv version 2.1.25 or lower is required to properly load the pretrained model.
+
+### Docker
+
+1. Install Docker and NVIDIA-Docker (see [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker) for instructions)
+2. Download the pretrained model (see [Pretrained model](#pretrained-model) section) in the same folder as the Dockerfile
+3. Build the docker image ```docker build --tag lcdnet -f Dockerfile .```
+4. Run the docker container ```docker run --gpus all -it --rm -v KITTI_ROOT:/data/KITTI lcdnet```
+5. From inside the container, activate the anaconda environment ```conda activate lcdnet``` and change directory to the LCDNet folder ```cd LCDNet```
+7. Run the training or evaluation scripts (see [Training](#training) and [Evaluation](#evaluation) sections)
 
 ## Preprocessing
 
