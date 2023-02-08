@@ -49,7 +49,7 @@ SHELL ["mamba", "run", "-n", "lcdnet", "/bin/bash", "-c"]
 RUN git clone --depth 1 --branch v0.5.2 https://github.com/open-mmlab/OpenPCDet.git
 WORKDIR /OpenPCDet
 
-ENV CUDA_HOME=/usr/local/cuda-11.1/
+ENV CUDA_HOME=/usr/local/cuda-11.3/
 ENV TORCH_CUDA_ARCH_LIST="3.5 3.7 5.0 5.2 5.3 6.0 6.1 6.2 7.0 7.5 8.0 8.6+PTX"
 RUN python setup.py develop
 
