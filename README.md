@@ -126,9 +126,9 @@ If you use LCDnet, please cite:
   journal={IEEE Transactions on Robotics}, 
   title={LCDNet: Deep Loop Closure Detection and Point Cloud Registration for LiDAR SLAM}, 
   year={2022},
-  volume={},
-  number={},
-  pages={1-20},
+  volume={38},
+  number={4},
+  pages={2074-2093},
   doi={10.1109/TRO.2022.3150683}
  }
 ```
