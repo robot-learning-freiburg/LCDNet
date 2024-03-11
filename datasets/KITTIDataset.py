@@ -44,7 +44,7 @@ def get_velo(idx, dir, sequence, jitter=False, remove_random_angle=-1, without_g
 class KITTILoader3DPoses(Dataset):
     """KITTI ODOMETRY DATASET"""
 
-    def __init__(self, dir, sequence, poses, train=True, loop_file='loop_GT',
+    def __init__(self, dir, sequence, poses, train=False, loop_file='loop_GT',
                  jitter=False, remove_random_angle=-1, without_ground=False):
         """
 
@@ -92,41 +92,7 @@ class KITTILoader3DPoses(Dataset):
         anchor_pcd = torch.from_numpy(get_velo(idx, self.dir, self.sequence, self.jitter,
                                                self.remove_random_angle, self.without_ground))
 
-        if self.train:
-            x = self.poses[idx][0, 3]
-            y = self.poses[idx][1, 3]
-            z = self.poses[idx][2, 3]
-
-            anchor_pose = torch.tensor([x, y, z])
-            possible_match_pose = torch.tensor([0., 0., 0.])
-
-            indices = list(range(len(self.poses)))
-            cont = 0
-            positive_idx = idx
-            negative_idx = idx
-            while cont < 2:
-                i = random.choice(indices)
-                possible_match_pose[0] = self.poses[idx][0, 3]
-                possible_match_pose[1] = self.poses[idx][1, 3]
-                possible_match_pose[2] = self.poses[idx][2, 3]
-                distance = torch.norm(anchor_pose - possible_match_pose)
-                if distance <= 4 and idx == positive_idx:
-                    positive_idx = i
-                    cont += 1
-                elif distance > 10 and idx == negative_idx:  # 1.5 < dist < 2.5 -> unknown
-                    negative_idx = i
-                    cont += 1
-
-            positive_pcd = torch.from_numpy(get_velo(positive_idx, self.dir, self.sequence, self.jitter,
-                                                     self.remove_random_angle, self.without_ground))
-            negative_pcd = torch.from_numpy(get_velo(negative_idx, self.dir, self.sequence, self.jitter,
-                                                     self.remove_random_angle, self.without_ground))
-
-            sample = {'anchor': anchor_pcd,
-                      'positive': positive_pcd,
-                      'negative': negative_pcd}
-        else:
-            sample = {'anchor': anchor_pcd}
+        sample = {'anchor': anchor_pcd}
 
         return sample
 
@@ -199,7 +165,7 @@ class KITTILoader3DDictPairs(Dataset):
 
 
         if positive_idx >= len(self.poses):
-            print(f"ERRORE: sequence {self.sequence}, positive idx {positive_idx} ")
+            print(f"ERROR: sequence {self.sequence}, positive idx {positive_idx} ")
         positive_pose = self.poses[positive_idx]
         positive_transl = torch.tensor(positive_pose[:3, 3], dtype=torch.float32)
 
