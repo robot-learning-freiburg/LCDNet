@@ -20,6 +20,7 @@ You can install LCDNet locally on your machine, or use the provided Dockerfile t
 
 Tested in the following environments:
 * Ubuntu 18.04/20.04/22.04
+* Python 3.7
 * cuda 10.2/11.1/11.3
 * pytorch 1.8/1.9/1.10
 * Open3D 0.12.0
