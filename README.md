@@ -16,6 +16,7 @@ You can install LCDNet locally on your machine, or use the provided Dockerfile t
 3. Install [spconv](https://github.com/traveller59/spconv) <= 2.1.25 (make sure to select the correct cuda version, for example ```pip install spconv-cu113==2.1.25``` for cuda 11.3)
 4. Install [OpenPCDet](https://github.com/open-mmlab/OpenPCDet)
 5. Install [faiss-cpu](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) - NOTE: avoid installing faiss via pip, use the conda version, or build it from source alternatively.
+```conda install -c pytorch faiss-cpu==1.7.4```
 
 Tested in the following environments:
 * Ubuntu 18.04/20.04/22.04
