@@ -5,3 +5,6 @@ opencv-python
 pytorch_metric_learning
 cython
 wandb
+pyquaternion
+easydict
+numba
